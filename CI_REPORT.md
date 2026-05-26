@@ -70,7 +70,7 @@ jobs:
 
 ## 3. 設計策略說明
 
-- 以單一 job 依序執行 `typecheck`、`format:check`、`test`，確保品質門檻清楚。
+- 將流程拆為三個獨立 job（TypeScript Typecheck、Prettier Check、Test），在 GitHub Actions 首頁可直接看出是哪個檢查失敗。
 - 透過 JUnit 輸出 + `dorny/test-reporter`，讓測試結果在 GitHub Actions 頁面可視化顯示。
 - `if: always()` 讓測試摘要上傳步驟即使前面失敗也盡量保留資訊，方便除錯。
 
